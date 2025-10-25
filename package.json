@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "test:quick": "npx artillery run user-scenario.yml",
+    "test:report": "npx artillery run user-scenario.yml --output results/report.json && npx artillery report results/report.json"
+  }
+}

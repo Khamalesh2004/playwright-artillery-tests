@@ -1,0 +1,17 @@
+# In user-scenario.yml (now in root)
+config:
+  target: "https://gorest.co.in"
+  phases:
+    - duration: 10
+      arrivalRate: 1
+      name: "Quick test"
+  
+  engines:
+    playwright: {}
+  
+  processor: "./playwright-setup.ts"  # Now in root
+
+scenarios:
+  - name: "User Creation and Retrieval Flow"
+    engine: playwright
+    testFunction: "userLifecycleScenario"

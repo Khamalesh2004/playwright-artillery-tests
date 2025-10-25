@@ -1,0 +1,23 @@
+config:
+  target: "https://gorest.co.in"
+  phases:
+    - duration: 30
+      arrivalRate: 2
+      name: "Ramp up phase"
+    - duration: 60
+      arrivalRate: 3
+      name: "Sustained load phase"
+  
+  engines:
+    playwright: 
+      launchOptions:
+        headless: true
+  
+  processor: "./playwright-setup.ts"
+  
+  reporter:
+    - json
+    - html
+  
+  variables:
+    accessToken: "YOUR_ACTUAL_ACCESS_TOKEN_HERE"
