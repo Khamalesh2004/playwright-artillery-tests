@@ -1,6 +1,26 @@
 {
+  "name": "playwright-artillery-tests",
+  "version": "1.0.0",
+  "description": "Playwright and Artillery testing project",
+  "main": "index.js",
   "scripts": {
-    "test:quick": "npx artillery run user-scenario.yml",
-    "test:report": "npx artillery run user-scenario.yml --output results/report.json && npx artillery report results/report.json"
-  }
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:artillery": "npx artillery run user-scenario.yml",
+    "test:artillery:report": "npx artillery run user-scenario.yml --output results/report.json && npx artillery report results/report.json",
+    "install:browsers": "playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "artillery": "^2.0.0"
+  },
+  "keywords": ["playwright", "artillery", "testing", "e2e", "load-testing"],
+  "author": "Khamalesh2004",
+  "license": "MIT"
 }
